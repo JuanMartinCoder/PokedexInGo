@@ -13,6 +13,6 @@ The purpose is to write a Golang CLI application that generates an "internal lin
 - Practice writing a CLI application in Golang
 - Practice making HTTP Requests in Go 
 - Learn how to parse HTML with Go 
-- Practice unit testing 
+- Practice unit testing
 
 
