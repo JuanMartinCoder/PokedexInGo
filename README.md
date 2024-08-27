@@ -15,4 +15,11 @@ The purpose is to write a Golang CLI application that generates an "internal lin
 - Learn how to parse HTML with Go 
 - Practice unit testing
 
+## Techonologies Used
 
+- [Go](https://golang.org/)
+- [Go Modules](https://github.com/golang/go/wiki/Modules)
+- [Go Testing](https://golang.org/pkg/testing/)
+- [Go HTTP Client](https://golang.org/pkg/net/http/)
+- [Go HTML Parser](https://golang.org/pkg/html/)
+- TDD ( Test Driven Development )
