@@ -1,3 +1,3 @@
-module github.com/JuanMartinCoder/WebCrawler
+module github.com/JuanMartinCoder/PokedexInGo
 
 go 1.23.0
