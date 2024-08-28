@@ -32,7 +32,7 @@ func NewClient() Client {
 }
 
 func (c *Client) ListLocationArea(pageUrl *string) (PokemonData, error) {
-	fullUrl := baseUrl + "/location-area?"
+	fullUrl := baseUrl + "/location-area"
 
 	if pageUrl != nil {
 		fullUrl = *pageUrl
