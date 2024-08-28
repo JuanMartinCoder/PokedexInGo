@@ -14,7 +14,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	cmds := allCommands.CreateCommandsList()
 
-	cfg := api.NewConfig(5 * time.Minute)
+	cfg := api.NewConfig(time.Minute)
 
 	fmt.Printf("pokedex > ")
 	for scanner.Scan() {
