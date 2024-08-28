@@ -27,4 +27,9 @@ Pokedex is a free and open-source API that provides access to Pokémon data. It 
 - [JSON](https://golang.org/pkg/encoding/json/)
 - [Pokedex API](https://pokeapi.co/)
 
+## Commands
 
+- help - Shows a list of Commands
+- exit - Exits the CLI 
+- map  - Displays the names of 20 location areas in the Pokemon world 
+- mapb - Similar to the map command, however, instead of displaying the next 20 locations, it displays the previous 20 locations. It's a way to go back. 
