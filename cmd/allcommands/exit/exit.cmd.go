@@ -1,8 +1,12 @@
 package exit
 
-import "os"
+import (
+	"os"
 
-func CommandExit() error {
+	"github.com/JuanMartinCoder/PokedexInGo/api"
+)
+
+func CommandExit(cfg *api.Config) error {
 	os.Exit(0)
 	return nil
 }

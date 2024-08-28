@@ -5,13 +5,15 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/JuanMartinCoder/PokedexInGo/api"
 	allCommands "github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands"
 )
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-
 	cmds := allCommands.CreateCommandsList()
+
+	cfg := api.NewConfig()
 
 	fmt.Printf("pokedex > ")
 	for scanner.Scan() {
@@ -19,7 +21,7 @@ func main() {
 		userInput := scanner.Text()
 
 		if cmds.IsACommand(userInput) {
-			if err := cmds.ExcecuteCmd(userInput)(); err != nil {
+			if err := cmds.ExcecuteCmd(userInput)(&cfg); err != nil {
 				fmt.Println(err)
 			}
 		} else {
