@@ -5,9 +5,12 @@ import (
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/JuanMartinCoder/PokedexInGo/internal/cache"
 )
 
 type Client struct {
+	cache      *cache.Cache
 	httpClient http.Client
 }
 
@@ -23,8 +26,9 @@ type PokemonData struct {
 
 const baseUrl = "https://pokeapi.co/api/v2"
 
-func NewClient() Client {
+func NewClient(interval time.Duration) Client {
 	return Client{
+		cache: cache.NewCache(interval),
 		httpClient: http.Client{
 			Timeout: time.Minute,
 		},
@@ -36,6 +40,16 @@ func (c *Client) ListLocationArea(pageUrl *string) (PokemonData, error) {
 
 	if pageUrl != nil {
 		fullUrl = *pageUrl
+	}
+
+	data, ok := c.cache.Get(fullUrl)
+
+	if ok {
+		pokemonData := PokemonData{}
+		err := json.Unmarshal(data, &pokemonData)
+		if err != nil {
+			return PokemonData{}, err
+		}
 	}
 
 	req, err := http.NewRequest("GET", fullUrl, nil)
@@ -61,6 +75,8 @@ func (c *Client) ListLocationArea(pageUrl *string) (PokemonData, error) {
 	if err != nil {
 		return PokemonData{}, err
 	}
+
+	c.cache.Add(fullUrl, body)
 
 	return pokemonData, nil
 }

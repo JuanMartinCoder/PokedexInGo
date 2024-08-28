@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/JuanMartinCoder/PokedexInGo/api"
 	allCommands "github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands"
@@ -13,7 +14,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	cmds := allCommands.CreateCommandsList()
 
-	cfg := api.NewConfig()
+	cfg := api.NewConfig(5 * time.Minute)
 
 	fmt.Printf("pokedex > ")
 	for scanner.Scan() {
