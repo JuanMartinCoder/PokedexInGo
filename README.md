@@ -32,4 +32,11 @@ Pokedex is a free and open-source API that provides access to Pokémon data. It 
 - help - Shows a list of Commands
 - exit - Exits the CLI 
 - map  - Displays the names of 20 location areas in the Pokemon world 
-- mapb - Similar to the map command, however, instead of displaying the next 20 locations, it displays the previous 20 locations. It's a way to go back. 
+- mapb - Similar to the map command, however, instead of displaying the next 20 locations, it displays the previous 20 locations. It's a way to go back.
+
+## Structure of the Project
+The basic idea was to make as separated as possible all the concerns of the application. For example, take the allCommands/ folder, 
+inside we have separated in different files each command to do exactly what the need to.
+
+![imagen](https://github.com/user-attachments/assets/12ba43ab-c9d4-4dae-9a64-52a688651a52)
+
