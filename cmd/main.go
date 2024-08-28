@@ -20,7 +20,7 @@ func main() {
 	for scanner.Scan() {
 		// map the text written by the user to a command
 		userInput := scanner.Text()
-
+		// fmt.Println(userInput)
 		if cmds.IsACommand(userInput) {
 			if err := cmds.ExcecuteCmd(userInput)(&cfg); err != nil {
 				fmt.Println(err)

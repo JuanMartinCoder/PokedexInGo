@@ -5,6 +5,7 @@ import (
 
 	"github.com/JuanMartinCoder/PokedexInGo/api"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/exit"
+	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/explore"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/mapb"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/mapcmd"
 )
@@ -49,6 +50,11 @@ func CreateCommandsList() *ListOfCommands {
 			name:        "mapb",
 			description: "Similar to the map command, however, instead of displaying the next 20 locations,\nit displays the previous 20 locations.",
 			callback:    mapb.MapbCommand,
+		},
+		"explore": {
+			name:        "explore <area_name>",
+			description: "list of all the Pokémon in a given area",
+			callback:    explore.Explore,
 		},
 	}
 }

@@ -25,6 +25,8 @@ type PokemonData struct {
 	} `json:"results"`
 }
 
+type LocationArea struct{}
+
 const baseUrl = "https://pokeapi.co/api/v2"
 
 func NewClient(interval time.Duration) Client {
