@@ -40,7 +40,6 @@ func (c *Cache) Add(key string, val []byte) {
 func (c *Cache) Get(key string) ([]byte, bool) {
 	c.mutex.Lock()
 	defer c.mutex.Unlock()
-
 	entry, ok := c.dataCache[key]
 	if !ok {
 		return nil, false

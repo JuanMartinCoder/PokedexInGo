@@ -2,7 +2,6 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 	"time"
@@ -99,7 +98,6 @@ func (c *Client) ListLocationArea(pageUrl *string) (PokemonData, error) {
 	data, ok := c.cache.Get(fullUrl)
 
 	if ok {
-		fmt.Println("Cache hit")
 		pokemonData := PokemonData{}
 		err := json.Unmarshal(data, &pokemonData)
 		if err != nil {
@@ -142,7 +140,6 @@ func (c *Client) GetLocationArea(locationArea string) (LocationArea, error) {
 	data, ok := c.cache.Get(fullUrl)
 
 	if ok {
-		fmt.Println("Cache hit")
 		pokemonData := LocationArea{}
 		err := json.Unmarshal(data, &pokemonData)
 		if err != nil {
