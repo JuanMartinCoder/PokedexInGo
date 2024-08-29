@@ -11,6 +11,7 @@ import (
 
 type Client struct {
 	cache      *cache.Cache
+	pokedex    *Pokedex
 	httpClient http.Client
 }
 
@@ -81,7 +82,8 @@ const baseUrl = "https://pokeapi.co/api/v2"
 
 func NewClient(interval time.Duration) Client {
 	return Client{
-		cache: cache.NewCache(interval),
+		cache:   cache.NewCache(interval),
+		pokedex: NewPokedex(),
 		httpClient: http.Client{
 			Timeout: time.Minute,
 		},

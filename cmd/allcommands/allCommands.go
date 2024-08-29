@@ -4,10 +4,13 @@ import (
 	"fmt"
 
 	"github.com/JuanMartinCoder/PokedexInGo/api"
+	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/catch"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/exit"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/explore"
+	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/inspect"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/mapb"
 	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/mapcmd"
+	"github.com/JuanMartinCoder/PokedexInGo/cmd/allcommands/pokedexcmd"
 )
 
 type cliCommand struct {
@@ -55,6 +58,21 @@ func CreateCommandsList() *ListOfCommands {
 			name:        "explore <area_name>",
 			description: "list of all the Pokémon in a given area",
 			callback:    explore.Explore,
+		},
+		"catch": {
+			name:        "catch <pokemon_name>",
+			description: "Tries to catch a pokemon and add it to your pokedex",
+			callback:    catch.CatchCommand,
+		},
+		"pokedex": {
+			name:        "pokedex",
+			description: "Print a list of all the names of the Pokemons in the Pokedex",
+			callback:    pokedexcmd.PokedexCommand,
+		},
+		"inspect": {
+			name:        "inspect <pokemon_name>",
+			description: "Allow players to see details about a Pokemon if they have seen it before. (caught it)",
+			callback:    inspect.InsepectCommand,
 		},
 	}
 }
