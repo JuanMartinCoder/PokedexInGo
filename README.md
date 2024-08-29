@@ -43,4 +43,7 @@ inside we have separated in different files each command to do exactly what the 
 
 ![imagen](https://github.com/user-attachments/assets/f3c908a3-e057-4ed1-8a2b-9ff6c8fa3522)
 
-
+## Ideas for the future
+- [ ] Add more commands (like simulate a battle between two Pokemon)
+- [ ] Add some testing to the Project
+- [ ] Explore the PokeApi more to get new ideas
