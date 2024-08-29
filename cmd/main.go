@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/JuanMartinCoder/PokedexInGo/api"
@@ -20,9 +21,18 @@ func main() {
 	for scanner.Scan() {
 		// map the text written by the user to a command
 		userInput := scanner.Text()
-		// fmt.Println(userInput)
-		if cmds.IsACommand(userInput) {
-			if err := cmds.ExcecuteCmd(userInput)(&cfg); err != nil {
+		cleanInput := cleanInput(userInput)
+		if len(cleanInput) == 0 {
+			continue
+		}
+		command := cleanInput[0]
+		args := []string{}
+
+		if len(cleanInput) > 1 {
+			args = cleanInput[1:]
+		}
+		if cmds.IsACommand(command) {
+			if err := cmds.ExcecuteCmd(command)(&cfg, args...); err != nil {
 				fmt.Println(err)
 			}
 		} else {
@@ -35,4 +45,8 @@ func main() {
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "reading standard input:", err)
 	}
+}
+
+func cleanInput(input string) []string {
+	return strings.Fields(strings.ToLower(input))
 }

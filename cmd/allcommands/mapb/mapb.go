@@ -6,7 +6,7 @@ import (
 	"github.com/JuanMartinCoder/PokedexInGo/api"
 )
 
-func MapbCommand(cfg *api.Config) error {
+func MapbCommand(cfg *api.Config, args ...string) error {
 	if cfg.PrevLocation == nil {
 		return fmt.Errorf("You are in the first page. You can't go back")
 	}

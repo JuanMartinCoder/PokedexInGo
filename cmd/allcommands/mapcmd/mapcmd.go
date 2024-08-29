@@ -6,7 +6,7 @@ import (
 	"github.com/JuanMartinCoder/PokedexInGo/api"
 )
 
-func MapCommand(cfg *api.Config) error {
+func MapCommand(cfg *api.Config, args ...string) error {
 	data, err := cfg.PokeClient.ListLocationArea(cfg.NextLocation)
 	if err != nil {
 		return err

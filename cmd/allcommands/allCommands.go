@@ -13,7 +13,7 @@ import (
 type cliCommand struct {
 	name        string
 	description string
-	callback    func(*api.Config) error
+	callback    func(*api.Config, ...string) error
 }
 
 type ListOfCommands map[string]cliCommand
@@ -25,7 +25,7 @@ func (c *ListOfCommands) IsACommand(name string) bool {
 	return false
 }
 
-func (c *ListOfCommands) ExcecuteCmd(name string) func(cfg *api.Config) error {
+func (c *ListOfCommands) ExcecuteCmd(name string) func(cfg *api.Config, args ...string) error {
 	return (*c)[name].callback
 }
 
@@ -59,7 +59,7 @@ func CreateCommandsList() *ListOfCommands {
 	}
 }
 
-func helpCmd(cfg *api.Config) error {
+func helpCmd(cfg *api.Config, args ...string) error {
 	lista := CreateCommandsList()
 	fmt.Println("Welcome to Pokedex!\n\nThese are the Available commands:\n")
 	for _, value := range *lista {
