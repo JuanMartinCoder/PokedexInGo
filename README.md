@@ -41,5 +41,6 @@ Pokedex is a free and open-source API that provides access to Pokémon data. It 
 The basic idea was to make as separated as possible all the concerns of the application. For example, take the allCommands/ folder, 
 inside we have separated in different files each command to do exactly what the need to.
 
-![imagen](https://github.com/user-attachments/assets/12ba43ab-c9d4-4dae-9a64-52a688651a52)
+![imagen](https://github.com/user-attachments/assets/f3c908a3-e057-4ed1-8a2b-9ff6c8fa3522)
+
 
