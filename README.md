@@ -7,7 +7,7 @@ the purpose is to build a Pokedex in a command-line REPL using Golang and the Po
 
 ### What is REPL?
 
-A REPL (Read-Eval-Print-Loop) is a programming environment that allows users to enter commands and see the results of their commands as they are being executed.
+A REPL (Read-Eval-Print-Loop) is a programming environment that allows users to enter commands and see the results of their commands as they are being executed
 
 ### What is Pokedex API?
 
